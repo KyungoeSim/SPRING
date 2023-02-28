@@ -17,4 +17,8 @@ public class CarServiceImpl implements CarService {
 		return carRepository.getAllCarList();
 	}
 
+	public List<CarDTO> getCarListByCategory(String category){
+		List<CarDTO> carsByCategory = carRepository.getCarListByCatedory(category);
+		return carsByCategory;
+	}
 }
