@@ -36,5 +36,26 @@ public class CarRepositoryImpl implements CarRepository {
 		}
 		return carsByCategory;
 	}
-
+	
+	public CarDTO getCarById(String carId) {
+		
+		CarDTO carInfo = null;
+		
+		for (int i = 0; i<listOfCars.size(); i++) {
+			CarDTO carDTO = listOfCars.get(i);
+			if(carDTO != null && carDTO.getCid()!=null && carDTO.getCid().equals(carId)) {
+				carInfo = carDTO;
+			}
+		}
+		
+		if (carInfo == null) {
+			throw new IllegalArgumentException("자동차 ID가 " + carId + "인 자동차는 없습니다.");
+		}
+		
+		return carInfo;
+	}
+	
+	public void setNewCar(CarDTO car) {
+		listOfCars.add(car);
+	}
 }
