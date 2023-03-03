@@ -6,13 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<%@include file="header.jsp" %>
-
-<div class="container">
-<div class="alert alert-dark" role="alert">
- Car Shop 방문을 환영합니다.
-</div>  
-</div>
-<%@include file="footer.jsp" %>
+<body>
+${data}
 </body>
 </html>
