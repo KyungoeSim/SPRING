@@ -9,7 +9,7 @@
 <title>Car List</title>
 </head>
 <body>
-<%@include file="header.jsp" %>
+<%@ include file="header.jsp" %>
 
 
 
@@ -25,10 +25,11 @@
 		
 		<c:forEach items="${carList}" var="car">
 			<div class = "col-md-4">
+				<img src="<c:url value="C:\\upload\\${car.getCarimage().getOriginalFilename()}"/>" style="width:60%"/>
 				<h3>${car.cid}</h3>
 				<p>${car.cname}
 				<p>${car.cprice} 만원
-				<p><a href="<c:url value="/car?id=${car.cid}"/>" class="btn btn-Secondary" role="button">상세보기</a>
+				<p><a href="<c:url value="/car?id=${car.cid}"/>" class="btn btn-primary" role="button">상세보기 &raquo;</a></p>
 			</div>
 
 		</c:forEach>
@@ -37,6 +38,6 @@
 	</div>
 
 
-<%@include file="footer.jsp" %>
+<%@ include file="footer.jsp" %>
 </body>
 </html>
