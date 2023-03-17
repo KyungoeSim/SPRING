@@ -28,4 +28,13 @@
 			   <beans:property name="maxUploadSize" value="10240000"/>
 	</beans:bean>
 	
+	<!-- 업로드 패스 설정 -->
+	<beans:bean class="java.lang.String" id="uploadPath">
+		<beans:constructor-arg
+			value="C:\develop\SPRING\CarShop\src\main\webapp\resources"/>
+		    <!-- value="C:\develop\SPRING\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\CarShop\resource" /> -->
+	</beans:bean>
+
+	<!-- 일반 파일 업로드 경로 -->
+	<resources mapping="/images/**" location="/resources/images/" />
 </beans:beans>

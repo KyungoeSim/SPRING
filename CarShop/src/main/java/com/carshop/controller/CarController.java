@@ -3,6 +3,8 @@ package com.carshop.controller;
 import java.io.File;
 import java.util.List;
 
+import javax.annotation.Resource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -49,13 +51,16 @@ public class CarController {
 		return "addCar";
 	}
 	
+	@Resource(name="uploadPath")
+	private String uploadPath;
+	
 	@PostMapping("/admin/add")
 	public String submitAddNewCar(@ModelAttribute("NewCar") CarDTO car) {
 		
 		MultipartFile carimage = car.getCarimage();
 		
 		String saveName = carimage.getOriginalFilename();
-		File saveFile = new File("C:\\upload",saveName);
+		File saveFile = new File(uploadPath + "\\images", saveName);
 		
 		if(carimage != null && !carimage.isEmpty()) {
 			try { carimage.transferTo(saveFile);
