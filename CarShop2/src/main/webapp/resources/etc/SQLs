@@ -1,0 +1,22 @@
+CREATE TABLE `car` (
+	`cid` VARCHAR(50) NOT NULL,
+	`cname` VARCHAR(50) NULL DEFAULT NULL,
+	`cprice` VARCHAR(50) NULL DEFAULT NULL,
+	`ccate` VARCHAR(50) NULL DEFAULT NULL,
+	`cdesc` VARCHAR(200) NULL DEFAULT NULL,
+	`cfilename` VARCHAR(50) NULL DEFAULT NULL,
+	PRIMARY KEY (`cid`) USING BTREE
+)
+ENGINE=InnoDB
+;
+
+
+
+-- 테이블 데이터 yoonkeunsoo.car:~3 rows (대략적) 내보내기
+
+INSERT INTO `car` (`cid`, `cname`, `cprice`, `ccate`, `cdesc`, `cfilename`) VALUES
+	('c0001', 'sonata', '3000', '중형', '판매중', 'c0001.jpg'),
+	('c0002', 'grandeur', '4000', '준대형', '중고제품', 'c0002.jpg'),
+	('c0003', 'avante', '2000', '준중형', '신동급', 'c0003.jpg');
+
+

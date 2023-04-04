@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+
+	<insert id="insert" parameterType="com.carshop.users.User"
+		useGeneratedKeys="true" keyProperty="username">
+		<![CDATA[
+			INSERT INTO users
+			(username, password, authority, enabled, uname, uemail)
+			VALUES
+			(#{username}, #{password}, "USER", 1, #{uname}, #{uemail})
+		]]>
+
+	</insert>
+	<select id="select_list" resultType="com.carshop.users.User">
+		<![CDATA[
+			SELECT * FROM users ORDER BY uno DESC
+		]]>
+
+	</select>
+
+	<delete id="delete" parameterType="String">
+		<![CDATA[
+			DELETE FROM users
+			WHERE username = #{username}
+		]]>
+	</delete>
+	
+	<update id="updateAuth" parameterType="HashMap">
+		<![CDATA[
+			UPDATE users
+			SET authority = #{authority}
+			WHERE username = #{username}
+		]]>
+	</update>
+	
+	<select id="select_email" parameterType="String" resultType="com.carshop.users.User">
+		<![CDATA[
+			SELECT * 
+			FROM users 
+			WHERE username = #{email}
+		]]>
+
+	</select>
+</mapper>

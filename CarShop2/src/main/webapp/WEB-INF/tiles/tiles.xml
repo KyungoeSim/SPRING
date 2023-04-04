@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD  Tiles Configuration 3.0//EN" 
+"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+	<definition name="base-Template"
+		template="/WEB-INF/tiles/layout/baseLayout.jsp">
+		<put-attribute name="title" value="Sample Title" />
+		<put-attribute name="heading" value="" />
+		<put-attribute name="subheading" value="" />
+		<put-attribute name="menu"
+			value="/WEB-INF/tiles/template/header.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer"
+			value="/WEB-INF/tiles/template/footer.jsp" />
+	</definition>
+
+	<definition name="main" extends="base-Template">
+		<put-attribute name="title" value="Welcome" />
+		<put-attribute name="heading" value="자동차 쇼핑몰" />
+		<put-attribute name="subheading"
+			value="Welcome to CarShop" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/main.jsp" />
+	</definition>
+
+	<definition name="cars" extends="base-Template">
+		<put-attribute name="title" value="Cars" />
+		<put-attribute name="heading" value="제품 목록" />
+		<put-attribute name="subheading" value="Car List" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/cars.jsp" />
+	</definition>
+
+	<definition name="car" extends="base-Template">
+		<put-attribute name="title" value="Car" />
+		<put-attribute name="heading" value="제품 정보" />
+		<put-attribute name="subheading" value="Car Details" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/car.jsp" />
+	</definition>
+
+	<definition name="addCar" extends="base-Template">
+		<put-attribute name="title" value="Cars" />
+		<put-attribute name="heading" value="차량 등록" />
+		<put-attribute name="subheading" value="Book Addition" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/addCar.jsp" />
+	</definition>
+
+	<definition name="login" extends="base-Template">
+		<put-attribute name="title" value="Login" />
+		<put-attribute name="heading" value="로그인" />
+		<put-attribute name="subheading" value="Login" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/login.jsp" />
+	</definition>
+
+	<definition name="cart" extends="base-Template">
+		<put-attribute name="title" value="Shpping Cart" />
+		<put-attribute name="heading" value="장바구니" />
+		<put-attribute name="subheading" value="Shopping Cart" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/cart.jsp" />
+	</definition>
+
+	<definition name="orderCustomerInfo" extends="base-Template">
+		<put-attribute name="title" value="Order" />
+		<put-attribute name="heading" value="고객정보" />
+		<put-attribute name="subheading"
+			value="Customer Details" />
+		<put-attribute name="content"
+			value="/WEB-INF/flows/order/orderCustomerInfo.jsp" />
+	</definition>
+
+	<definition name="orderShippingInfo" extends="base-Template">
+		<put-attribute name="title" value="Order" />
+		<put-attribute name="heading" value="배송정보" />
+		<put-attribute name="subheading"
+			value="Shipping Details" />
+		<put-attribute name="content"
+			value="/WEB-INF/flows/order/orderShippingInfo.jsp" />
+	</definition>
+
+	<definition name="orderConfirmation" extends="base-Template">
+		<put-attribute name="title" value="Order" />
+		<put-attribute name="heading" value="주문정보" />
+		<put-attribute name="subheading"
+			value="Order Confirmation" />
+		<put-attribute name="content"
+			value="/WEB-INF/flows/order/orderConfirmation.jsp" />
+	</definition>
+
+	<definition name="orderFinished" extends="base-Template">
+		<put-attribute name="title" value="Order" />
+		<put-attribute name="heading" value="주문 완료" />
+		<put-attribute name="subheading" value="Thanks you" />
+		<put-attribute name="content"
+			value="/WEB-INF/flows/order/orderFinished.jsp" />
+	</definition>
+
+	<definition name="orderCartWarning" extends="base-Template">
+		<put-attribute name="title" value="Order" />
+		<put-attribute name="heading" value="주문 취소" />
+		<put-attribute name="subheading" value="Invalid Cart" />
+		<put-attribute name="content"
+			value="/WEB-INF/flows/order/orderCartWarning.jsp" />
+	</definition>
+
+	<definition name="product" extends="base-Template">
+		<put-attribute name="title" value="Product" />
+		<put-attribute name="heading" value="제품관리" />
+		<put-attribute name="subheading" value="Product" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/product.jsp" />
+	</definition>
+
+	<definition name="updateForm" extends="base-Template">
+		<put-attribute name="title" value="Update Car" />
+		<put-attribute name="heading" value="정보 수정" />
+		<put-attribute name="subheading" value="Update Car" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/updateForm.jsp" />
+	</definition>
+
+	<definition name="users/joinform" extends="base-Template">
+		<put-attribute name="title" value="Member" />
+		<put-attribute name="heading" value="회원 가입" />
+		<put-attribute name="subheading" value="Join Member" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/users/joinform.jsp" />
+	</definition>
+	<definition name="users/joinkakao" extends="base-Template">
+		<put-attribute name="title" value="Kakao Member" />
+		<put-attribute name="heading" value="카카오 회원 가입" />
+		<put-attribute name="subheading" value="Kakao Join Member" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/users/joinkakao.jsp" />
+	</definition>
+
+
+	<definition name="users/list" extends="base-Template">
+		<put-attribute name="title" value="Members" />
+		<put-attribute name="heading" value="회원 관리" />
+		<put-attribute name="subheading" value="Members" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/users/list.jsp" />
+	</definition>
+
+	<definition name="boards/addboard" extends="base-Template">
+		<put-attribute name="title" value="Board" />
+		<put-attribute name="heading" value="게시판 작성" />
+		<put-attribute name="subheading" value="Board" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/boards/addboard.jsp" />
+	</definition>
+
+	<definition name="boards/list" extends="base-Template">
+		<put-attribute name="title" value="Board List" />
+		<put-attribute name="heading" value="게시판 목록" />
+		<put-attribute name="subheading" value="Board List" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/boards/list.jsp" />
+	</definition>
+
+	<definition name="boards/board" extends="base-Template">
+		<put-attribute name="title" value="Board" />
+		<put-attribute name="heading" value="게시물 보기" />
+		<put-attribute name="subheading" value="Board" />
+		<put-attribute name="content"
+			value="/WEB-INF/views/boards/board.jsp" />
+	</definition>
+
+</tiles-definitions>

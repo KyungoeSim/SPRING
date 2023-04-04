@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE  mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="car">
+
+	<insert id="insert"
+		parameterType="com.carshop.controller.CarDTO" useGeneratedKeys="true"
+		keyProperty="cid">
+		<![CDATA[
+			insert into car
+			(cid, cname, cprice, ccate, cdesc, cfilename)
+			values
+			(#{cid}, #{cname}, #{cprice}, #{ccate}, #{cdesc}, #{cfilename})
+		]]>
+
+	</insert>
+	<select id="select_list"
+		resultType="com.carshop.controller.CarDTO">
+		<![CDATA[
+			select * from car
+		]]>
+	</select>
+	<select id="select_detail" parameterType="String"
+		resultType="com.carshop.controller.CarDTO">
+		<![CDATA[
+			select * from car where cid = #{cid}
+		]]>
+
+	</select>
+	
+	<update id="update1" parameterType="com.carshop.controller.CarDTO">
+		<![CDATA[
+			update car set
+				cname = #{cname},
+				cprice = #{cprice},
+				ccate = #{ccate},		
+				cdesc = #{cdesc},
+				cfilename = #{cfilename}
+			where cid = #{cid}			
+		]]>
+	</update>
+	
+	<update id="update2" parameterType="com.carshop.controller.CarDTO">
+		<![CDATA[
+			update car set
+				cname = #{cname},
+				cprice = #{cprice},
+				ccate = #{ccate},			
+				cdesc = #{cdesc}			
+			where cid = #{cid}			
+		]]>
+	</update>
+	<delete id="delete" parameterType="String">
+		<![CDATA[
+			delete from car 
+			where cid = #{cid}
+		]]>
+	</delete>
+</mapper>
